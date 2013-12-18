@@ -3,5 +3,5 @@
 1000		3) Longitud de la Cinta
 0.900000		4)Pc
 0.010000		5)Pm
-1000		6) Generaciones
+100		6) Generaciones
 0.500000		7) W

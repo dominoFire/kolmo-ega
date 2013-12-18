@@ -25,7 +25,19 @@
             <target>1.7</target>
         </configuration>
     </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>org.perez.kolmoEGA.Kolmogorov</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
+
   </build>
 
   <dependencies>
