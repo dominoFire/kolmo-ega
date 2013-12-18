@@ -7,6 +7,7 @@ package org.perez.kolmoEGA;
 
 import java.io.*;
 import java.util.Random;
+import java.util.Scanner;
 
 class Kolmogorov {
     /* ***********************************
@@ -646,13 +647,12 @@ class Kolmogorov {
      * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-        BufferedReader Fbr, Kbr;
+        Scanner jin = new Scanner(System.in);
         while (true) {
-            Kbr = new BufferedReader(new InputStreamReader(System.in));
             while (true) {
                 System.out.println("Deme la raiz del generador de numeros aleatorios");
                 try {
-                    root = Integer.parseInt(Kbr.readLine());
+                    root = jin.nextInt();
                     break;
                 } catch (Exception e) {
                     System.out.println("Debe ser entero!\n");
@@ -685,11 +685,11 @@ class Kolmogorov {
                     Duplica(fitness, genoma); //Duplica los primeros N
                     Cruza(genoma); //Cruza los primeros N
                     Muta(genoma); //Muta los primeros N
-                    //Evalua(fitness, genoma); //Evalua los primeros N
+                    Evalua(fitness, genoma); //Evalua los primeros N
                     //EvaluaLCS(fitness, genoma);
                     //EvaluaSubstring(fitness, genoma);
                     //EvaluaTodo(fitness, genoma);
-                    EvaluaTodoTodo(fitness, genoma);
+                    //EvaluaTodoTodo(fitness, genoma);
                     if (BestSingleMatches == TTLen) {
                         BestFound = true;
                         Elite[Optimo] = genoma[0];
@@ -709,7 +709,7 @@ class Kolmogorov {
                 }//Endif
                 ResultadosDeLaCorrida(Elite);
                 System.out.println("DESEA CONTINUAR LA BUSQUEDA? (S/*)");
-                if (!Kbr.readLine().toUpperCase().equals("S")) {
+                if(!jin.nextLine().toUpperCase().equals("S")) {
                     break;
                 }
                 Optimo = 0;
@@ -717,11 +717,12 @@ class Kolmogorov {
                 Last = Last + G;
             }//endWhile
             System.out.println("\n\nOtra corrida? (S/*)");
-            String Resp = Kbr.readLine().toUpperCase();
+            String Resp = jin.nextLine().toLowerCase();
             if (!Resp.equals("S")) {
                 break;
             }
         }//endMain
         System.out.println("\n\n*****\t\t\tFIN DE PROGRAMA\t\t\t*****\n\n\n");
+        jin.close();
     }//endLoop
 } //endClass

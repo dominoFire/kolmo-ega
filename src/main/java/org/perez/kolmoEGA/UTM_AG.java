@@ -132,10 +132,10 @@ public class UTM_AG {
     /**
      * Devuelve el número de estados de la Máquina de Turing más pequeña que 
      * reproduce el mensaje dado por ?????
-     * @param TM
-     * @param TRS
-     * @param EWT
-     * @param CT
+     * @param TM Descripcion de la Máquina de Turing como cadena binaria ASCII
+     * @param TRS Número de Transiciones máximo a ejecutar
+     * @param EWT Empty Working Tape
+     * @param CT true si se quiere que se cree la Maquina de Turing
      * @return
      * @throws Exception 
      */
